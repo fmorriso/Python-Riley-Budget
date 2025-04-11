@@ -1,6 +1,13 @@
+import sys
 
 
 # Takes user input to sort income and expenses in budget
+
+
+def get_python_version() -> str:
+    return f'{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}'
+
+
 def get_type():
     while True:
         transaction_type = input("Enter transaction type ([i]ncome or [e]xpense): ")
@@ -56,20 +63,22 @@ def print_summary(balance):
 
 
 # Uses a dictionary and initial values for income/expenses to create budget
-#def budget(dictionary):
+# def budget(dictionary):
 def display_budget(heading):
     print(heading)
     for top_key, sub_dict in budget_dict.items():
         print(top_key)
         for category, amount_string in sub_dict.items():
             amount = float(amount_string)
-            print("\t" + category  + ": " + str(amount))
+            print("\t" + category + ": " + str(amount))
     print('Total Income: $' + str(total_income))
     print('Total Expenses: $' + str(total_expenses))
     print('Balance: $' + str(total_income - total_expenses))
 
 
 ###### MAIN LOGIC STARTS HERE ##################
+print(f'Simple Budget program using python version {get_python_version()}')
+
 budget_dict = {'Income': {}, 'Expenses': {}}
 total_income = 0
 total_expenses = 0
@@ -92,30 +101,29 @@ while True:
         total_expenses += amount
     print("Income: " + str(total_income) + " Expenses: " + str(total_expenses))
 
-
 display_budget('Final Budget: ')
-    # Iterates through dictionary keys to print itemized income and expenses report
-    #print("Final budget: ")
-    # for type_key in budget_dict:
-    #     print(type_key + ": ")
-    #     for category_key in budget_dict[type_key]:
-    #         print(category_key + ": " + )
+# Iterates through dictionary keys to print itemized income and expenses report
+# print("Final budget: ")
+# for type_key in budget_dict:
+#     print(type_key + ": ")
+#     for category_key in budget_dict[type_key]:
+#         print(category_key + ": " + )
 
-    # print(budget_dict)
-    # for type_key in budget_dict:
-    #     print(f"{type_key}")
-    #     for sub_key, value in budget_dict.items():
-    #         for value in value.items():
-    #             #print(f"  Sub Key: {sub_key}, Value: {value}")
-    #             print(f"  Value: {value}")
-    #get_balance(budget_dict)
-    #get_balance()
+# print(budget_dict)
+# for type_key in budget_dict:
+#     print(f"{type_key}")
+#     for sub_key, value in budget_dict.items():
+#         for value in value.items():
+#             #print(f"  Sub Key: {sub_key}, Value: {value}")
+#             print(f"  Value: {value}")
+# get_balance(budget_dict)
+# get_balance()
 
 
 # Creates dictionary for transaction
 
 
-#budget(budget_dict)
+# budget(budget_dict)
 
 # # Example usage:
 # my_dict = {
