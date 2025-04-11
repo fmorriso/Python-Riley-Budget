@@ -66,6 +66,7 @@ def display_budget(heading):
             print("\t" + category  + ": " + str(amount))
     print('Total Income: $' + str(total_income))
     print('Total Expenses: $' + str(total_expenses))
+    print('Balance: $' + str(total_income - total_expenses))
 
 
 ###### MAIN LOGIC STARTS HERE ##################
